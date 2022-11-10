@@ -47,16 +47,61 @@ body {
 }
 
 /***************** CARD ANIMATIONS ****************/
-/* .card-groups {} */
+.card-swiper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
+.card-groups,
 .card-group,
 .card {
   aspect-ratio: 5/7;
 }
 
+.card-groups,
 .card-group,
 .big-card {
   width: 30vmin;
+}
+
+.card-group {
+  position: absolute;
+}
+
+.card-swiper-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 8vmin;
+}
+
+.card-swiper-buttons>button {
+  padding: 10px 20px;
+  font-size: 2.5rem;
+  font-weight: 500;
+  box-shadow: 0px 8px 15px rgba(150, 145, 147, 0.4);
+  border-radius: 45px;
+  background-color: rgba(100, 150, 250, 0.9);
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 300ms ease-in;
+}
+
+.card-swiper-buttons>button:hover {
+  translate: 0 -5px;
+}
+
+.card-swiper-buttons>button:nth-child(1):hover {
+  background-color: rgba(250, 75, 20, 0.9);
+}
+
+.card-swiper-buttons>button:nth-child(2):hover {
+  background-color: rgba(50, 275, 20, 0.9);
+}
+
+.card-swiper-buttons>button:active {
+  box-shadow: -1px -1px 2px 1px rgba(255, 250, 245, 0.75);
 }
 
 .card {
@@ -69,15 +114,11 @@ body {
   background-size: cover;
 }
 
-.big-card {
-  width: 30vmin;
-}
-
 .little-card {
   width: 12vmin;
   left: 50%;
   top: 50%;
-  translate: -50% 50%;
+  translate: -50%;
 }
 
 .big-card:nth-child(2) {
@@ -158,4 +199,8 @@ body {
 .card-group:hover>.little-card:nth-child(7) {
   translate: -200% -75%;
   rotate: 15deg;
+}
+
+.card-group[data-status="unknown"] {
+  scale: 0;
 }
