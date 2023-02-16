@@ -109,6 +109,13 @@ main {
   translate: 0;
 }
 
+nav div {
+  cursor: pointer;
+  margin: 1.25rem 0;
+  font-size: 1.25rem;
+  text-decoration: underline;
+  text-align: center;
+}
 
 /*********** EYEBALLS - PSEUDO ELEMENTS ***********/
 .head {
